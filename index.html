@@ -1,135 +1,115 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang Web Video Nền</title>
-    <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .video-background {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
-        transform: translate(-50%, -50%);
-      }
-
-      .content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: white;
-        padding: 20px;
-      }
-
-      .button {
-        background-color: rgba(0, 123, 255, 0.7);
-        border: none;
-        color: white;
-        padding: 15px 30px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-      }
-
-      .button:hover {
-        background-color: rgba(0, 123, 255, 1);
-      }
-
-      .textbox {
-        margin-top: 20px;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        width: 80%;
-        max-width: 400px;
-      }
-
-      .message {
-        margin-top: 10px;
-        color: black;
-        font-size: 16px;
-      }
-    </style>
-  </head>
-  <body>
+    <title>Thanh Tâm Meo Meo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
     <video autoplay muted loop class="video-background">
-      <source src="Download.mp4" type="video/mp4" />
-      Trình duyệt của bạn không hỗ trợ video.
+        <source src="Download.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video.
     </video>
 
     <div class="content">
-      <h1>Chào Mừng Bạn Đến Với Trang Web Của Tôi</h1>
-      <button class="button" onclick="showMessage()">Nhấn Tôi</button>
-      <input
-        type="text"
-        class="textbox"
-        id="userInput"
-        placeholder="Nhập tên của bạn ở đây..."
-      />
+        <div class="textbox-container">
+            <img
+                src="https://png.pngtree.com/png-clipart/20220313/original/pngtree-cute-text-box-with-bear-png-image_7430140.png"
+                alt="Textbox"
+                class="textbox-image"
+            />
+            <input
+                type="text"
+                class="textbox-input"
+                id="userInput"
+                placeholder="Nhập tên của bạn ở đây..."
+            />
+            <button class="heart-button" onclick="showLoading()">
+                <img
+                    src="https://media.istockphoto.com/id/842899542/vector/red-heart-vector.jpg?s=612x612&w=0&k=20&c=BfD9pka_0VHoa9s8a7VzGVYU1WGct71iwTry5cY6rtU="
+                    alt="Heart Button"
+                />
+            </button>
+        </div>
+    </div>
+
+    <div class="loading" id="loadingDiv">
+        <div class="loading-dots">
+            <img
+                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
+                alt="Loading Dot 1"
+            />
+            <img
+                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
+                alt="Loading Dot 2"
+            />
+            <img
+                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
+                alt="Loading Dot 3"
+            />
+        </div>
     </div>
 
     <script>
-      function showMessage() {
-        const userInput = document.getElementById("userInput").value;
-        if (!userInput) {
-          alert("Vui lòng nhập tên của bạn!");
-          return;
+        function showLoading() {
+            const loadingDiv = document.getElementById("loadingDiv");
+            loadingDiv.classList.add("show");
+            setTimeout(() => {
+                loadingDiv.classList.remove("show");
+                setTimeout(() => {
+                    showMessage();
+                }, 500); // Thời gian delay trước khi hiện thông báo
+            }, 3000); // Thời gian loading trước khi thông báo xuất hiện
         }
 
-        // Tạo một div để chứa thông báo
-        const messageDiv = document.createElement("div");
-        messageDiv.style.position = "fixed";
-        messageDiv.style.top = "50%";
-        messageDiv.style.left = "50%";
-        messageDiv.style.transform = "translate(-50%, -50%)";
-        messageDiv.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
-        messageDiv.style.padding = "20px";
-        messageDiv.style.borderRadius = "10px";
-        messageDiv.style.zIndex = "2";
-        messageDiv.style.textAlign = "center";
+        function showMessage() {
+            const userInput = document.getElementById("userInput").value;
+            if (!userInput) {
+                alert("Vui lòng nhập tên của bạn!");
+                return;
+            }
+            const messageDiv = document.createElement("div");
+            messageDiv.className = "message-div";
 
-        // Tạo nội dung thông báo
-        const messageContent = `Chúc ${userInput} mãi tỏa sáng như ánh nắng ban mai, mang lại niềm vui cho mọi người xung quanh. Mong rằng mỗi ngày của ${userInput} đều đầy ắp niềm vui, hạnh phúc và sự yêu thương. ${userInput} xứng đáng với những điều tốt đẹp nhất!`;
+            // Tạo nội dung thông báo
+            const messageContent = `Chúc ${userInput} mãi tỏa sáng như ánh nắng ban mai, mang lại niềm vui cho mọi người xung quanh. Mong rằng mỗi ngày của ${userInput} đều đầy ắp niềm vui, hạnh phúc và sự yêu thương. ${userInput} xứng đáng với những điều tốt đẹp nhất!`;
 
-        // Tạo phần tử p để chứa nội dung thông báo
-        const messageText = document.createElement("p");
-        messageText.className = "message";
-        messageText.innerText = messageContent;
+            // Tạo phần tử p để chứa nội dung thông báo
+            const messageText = document.createElement("p");
+            messageText.innerText = messageContent;
 
-        // Thêm hình ảnh vào div
-        const img = document.createElement("img");
-        img.src =
-          "https://qpet.vn/wp-content/uploads/2023/04/Meo-Chibi-Gif-de-thuong-nhat.gif";
-        img.style.width = "200px"; // Điều chỉnh kích thước hình ảnh nếu cần
-        img.style.height = "auto";
+            // Tạo hình phong bì
+            const envelopeImage = document.createElement("img");
+            envelopeImage.src =
+                "https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-valentines-day-letter-pink-envelope-love-envelope-illustration-couple-letter-png-image_456659.jpg";
+            envelopeImage.alt = "Hình phong bì";
+            envelopeImage.className = "envelope-image"; // Thêm lớp cho phong bì
 
-        messageDiv.appendChild(img);
-        messageDiv.appendChild(messageText);
-        document.body.appendChild(messageDiv);
+            // Thêm ảnh mèo vào thông báo
+            const catImage = document.createElement("img");
+            catImage.src =
+                "https://qpet.vn/wp-content/uploads/2023/04/Meo-Chibi-Gif-de-thuong-nhat.gif";
+            catImage.alt = "Mèo dễ thương";
 
-        // Tự động đóng thông báo sau 5 giây
-        setTimeout(() => {
-          document.body.removeChild(messageDiv);
-        }, 5000);
-      }
+            messageDiv.appendChild(envelopeImage); // Thêm hình phong bì vào thông báo
+            messageDiv.appendChild(messageText);
+            messageDiv.appendChild(catImage); // Thêm ảnh mèo vào div thông báo
+            document.body.appendChild(messageDiv);
+
+            // Hiện thông báo với hiệu ứng
+            setTimeout(() => {
+                messageDiv.classList.add("show");
+            }, 10);
+
+            // Tự động đóng thông báo sau 5 giây
+            setTimeout(() => {
+                messageDiv.classList.remove("show"); // Ẩn thông báo với hiệu ứng
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 500); // Đợi cho hiệu ứng hoàn tất trước khi xóa
+            }, 5000);
+        }
     </script>
-  </body>
+</body>
 </html>
