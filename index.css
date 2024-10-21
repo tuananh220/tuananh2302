@@ -125,4 +125,65 @@ html {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.3)
+        url("https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-valentines-day-letter-pink-envelope-love-envelope-illustration-couple-letter-png-image_456659.jpg")
+        no-repeat center; /* Nền trong suốt với ảnh phong bì */
+    background-size: cover; /* Đảm bảo phong bì vừa với div */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    width: 90%;
+    max-width: 400px;
+    color: #333; /* Màu chữ */
+}
+
+.message-div.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.message-div p {
+    font-size: 18px; /* Tăng kích thước chữ cho thông điệp */
+    font-weight: bold; /* Làm cho chữ đậm hơn */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Tạo bóng cho chữ */
+}
+
+.message-div img {
+    width: 100px; /* Thay đổi kích thước ảnh mèo */
+    margin-top: 10px; /* Khoảng cách trên ảnh mèo */
+}
+
+.envelope-image {
+    position: absolute;
+    top: 0; /* Để phong bì nằm ở đầu thông báo */
+    left: 0; /* Căn trái */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: auto; /* Chiếm toàn bộ chiều cao */
+    opacity: 0.5; /* Đặt độ trong suốt cho phong bì */
+    z-index: -1; /* Để phong bì nằm dưới các nội dung khác */
+    object-fit: cover; /* Giữ tỷ lệ khung hình cho phong bì */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .textbox-image {
+        width: 150px; /* Kích thước hình ảnh textbox cho màn hình nhỏ */
+    }
+
+    .textbox-input {
+        font-size: 14px; /* Giảm kích thước chữ trong ô nhập */
+    }
+
+    .heart-button img {
+        height: 40px; /* Kích thước hình ảnh trái tim cho màn hình nhỏ */
+    }
+
+    .message-div p {
+        font-size: 16px; /* Giảm kích thước chữ cho thông điệp */
+    }
+}
