@@ -48,6 +48,7 @@ html {
     position: relative; /* Để ô input nằm bên trong hình ảnh */
     display: flex; /* Sử dụng flexbox cho ô textbox và button */
     align-items: center; /* Căn giữa theo chiều dọc */
+    flex-direction:column;
 }
 
 .textbox-image {
