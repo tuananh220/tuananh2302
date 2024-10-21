@@ -36,7 +36,7 @@ html {
     outline: none;
     height: 50px; /* Chiều cao của nút */
     width: auto; /* Chiều rộng tự động */
-    margin-left: 20px; /* Khoảng cách giữa ô nhập và nút bấm */
+    margin-left: 30px; /* Khoảng cách giữa ô nhập và nút bấm */
 }
 
 .heart-button img {
