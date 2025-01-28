@@ -1,115 +1,187 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pthao Xinh dep</title>
-    <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-    <video autoplay muted loop playsinline class="video-background">
-        <source src="Download.mp4" type="video/mp4" />
-        Trình duyệt của bạn không hỗ trợ video.
-    </video>
-
-    <div class="content">
-        <div class="textbox-container">
-            <img
-                src="https://png.pngtree.com/png-clipart/20220313/original/pngtree-cute-text-box-with-bear-png-image_7430140.png"
-                alt="Textbox"
-                class="textbox-image"
-            />
-            <input
-                type="text"
-                class="textbox-input"
-                id="userInput"
-                placeholder="Nhập tên của cậu ở đây..."
-            />
-            <button class="heart-button" onclick="showLoading()">
-                <img
-                    src="https://media.istockphoto.com/id/842899542/vector/red-heart-vector.jpg?s=612x612&w=0&k=20&c=BfD9pka_0VHoa9s8a7VzGVYU1WGct71iwTry5cY6rtU="
-                    alt="Heart Button"
-                />
-            </button>
-        </div>
+    <link rel="stylesheet" href="fireworks v2.0.css" />
+    <title>2025</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="block-audio">
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp1.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp1.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp1.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp2.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp2.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp2.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp3.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp3.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp3.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp4.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp4.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp4.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp5.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp5.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp5.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp6.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp6.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp6.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp7.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp7.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp7.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp8.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp8.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="exp"
+        src="http://static.dar-studio.com/codepen/audio/firework/exp8.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch1.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch1.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch2.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch2.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch3.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch3.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch4.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch4.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch5.mp3"
+        controls="controls"
+      ></audio>
+      <audio
+        class="launch"
+        src="http://static.dar-studio.com/codepen/audio/firework/launch5.mp3"
+        controls="controls"
+      ></audio>
     </div>
 
-    <div class="loading" id="loadingDiv">
-        <div class="loading-dots">
-            <img
-                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
-                alt="Loading Dot 1"
-            />
-            <img
-                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
-                alt="Loading Dot 2"
-            />
-            <img
-                src="https://th.bing.com/th/id/R.42749a91fc5e299954e4cc055729ad55?rik=aZCe83QW0wK0YQ&pid=ImgRaw&r=0"
-                alt="Loading Dot 3"
-            />
-        </div>
-    </div>
-
-    <script>
-        function showLoading() {
-            const loadingDiv = document.getElementById("loadingDiv");
-            loadingDiv.classList.add("show");
-            setTimeout(() => {
-                loadingDiv.classList.remove("show");
-                setTimeout(() => {
-                    showMessage();
-                }, 500); // Thời gian delay trước khi hiện thông báo
-            }, 3000); // Thời gian loading trước khi thông báo xuất hiện
-        }
-
-        function showMessage() {
-            const userInput = document.getElementById("userInput").value;
-            if (!userInput) {
-                alert("Vui lòng nhập tên của bạn!");
-                return;
-            }
-            const messageDiv = document.createElement("div");
-            messageDiv.className = "message-div";
-
-            // Tạo nội dung thông báo
-            const messageContent = `Chúc ${userInput} mãi tỏa sáng như ánh nắng ban mai, mang lại niềm vui cho mọi người xung quanh. Mong rằng mỗi ngày của ${userInput} đều đầy ắp niềm vui, hạnh phúc và sự yêu thương. ${userInput} xứng đáng với những điều tốt đẹp nhất!`;
-
-            // Tạo phần tử p để chứa nội dung thông báo
-            const messageText = document.createElement("p");
-            messageText.innerText = messageContent;
-
-            // Tạo hình phong bì
-            const envelopeImage = document.createElement("img");
-            envelopeImage.src =
-                "https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-valentines-day-letter-pink-envelope-love-envelope-illustration-couple-letter-png-image_456659.jpg";
-            envelopeImage.alt = "Hình phong bì";
-            envelopeImage.className = "envelope-image"; // Thêm lớp cho phong bì
-
-            // Thêm ảnh mèo vào thông báo
-            const catImage = document.createElement("img");
-            catImage.src =
-                "https://qpet.vn/wp-content/uploads/2023/04/Meo-Chibi-Gif-de-thuong-nhat.gif";
-            catImage.alt = "Mèo dễ thương";
-
-            messageDiv.appendChild(envelopeImage); // Thêm hình phong bì vào thông báo
-            messageDiv.appendChild(messageText);
-            messageDiv.appendChild(catImage); // Thêm ảnh mèo vào div thông báo
-            document.body.appendChild(messageDiv);
-
-            // Hiện thông báo với hiệu ứng
-            setTimeout(() => {
-                messageDiv.classList.add("show");
-            }, 10);
-
-            // Tự động đóng thông báo sau 5 giây
-            setTimeout(() => {
-                messageDiv.classList.remove("show"); // Ẩn thông báo với hiệu ứng
-                setTimeout(() => {
-                    document.body.removeChild(messageDiv);
-                }, 500); // Đợi cho hiệu ứng hoàn tất trước khi xóa
-            }, 5000);
-        }
-    </script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="fireworks v2.0.js"></script>
+  </body>
 </html>
